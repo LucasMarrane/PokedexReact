@@ -1,0 +1,243 @@
+*, body, html {
+  box-sizing: border-box;
+}
+
+body{
+  width: 100vw;
+  min-height: 100vh;
+  box-sizing: border-box;
+  &::before{
+    box-sizing: border-box;
+    width: 100vw;
+    height: 205px;
+    content: "";
+    background-color: red;
+    position: absolute; 
+    border-bottom: 10px solid #000;
+     
+    
+    z-index: 1;
+  }
+  &::after{
+    box-sizing: border-box;
+    width: 80px;
+    height: 80px;
+    content: "";
+    background-color: rgb(255, 255, 255);
+    position: absolute;
+    border: 10px solid black;
+    border-radius: 50%;
+    top: 160px;
+    left: calc(50vw - 40px);
+    z-index: 2;
+  }
+}
+
+.App {
+  text-align: center;
+
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {  
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: #000;
+  position: relative;
+
+  
+    z-index: 10;
+  
+
+  &::after {
+    content: "";
+    background-color: #000;
+    height: 50vh;
+    position: absolute;
+  }
+}
+
+ul {
+  flex-direction: row;
+  flex-wrap: wrap;
+  display: flex;
+  padding: 0;
+  margin: 0;
+  width: 98vw;
+  padding: 10px;
+  margin-top: 10%;  
+
+  li {
+    list-style: none;
+    display: flex;
+    flex-direction: column-reverse;
+    flex-wrap: wrap;    
+    padding: 10px;   
+    width: 16.66%; 
+
+    @media screen and(max-width: 1024px) {
+      width: 33.33%;
+    }
+
+    @media screen and(max-width: 624px) {
+      width: 100%;
+    }
+
+    div {      
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 10px;
+      border-radius: 10px;
+      
+
+      img {
+        max-width: 400px;
+        max-height: 400px;
+      }
+    }
+
+
+  }
+}
+
+.steel {
+  background-color: #f4f4f4;
+
+  &:hover{
+    background-color: #d6d6d6;
+  }
+}
+
+.fire {
+  background-color: #FDDFDF;
+  &:hover{
+    background-color: #fdb6b6;
+  }
+}
+
+.grass {
+  background-color: #DEFDE0;
+  &:hover{
+    background-color: #aaf7af;
+  }
+}
+
+.electric {
+  background-color: #FCF7DE;
+  &:hover{
+    background-color: #fce98a;
+  }
+}
+
+.water,
+.ice {
+  background-color: #DEF3FD;
+  &:hover{
+    background-color: #b6e3f8;
+  }
+}
+
+.ground {
+  background-color: #f4e7da;
+  &:hover{
+    background-color: #f0bf8e;
+  }
+}
+
+.rock {
+  background-color: #d5d5d4;
+  &:hover{
+    background-color: #a5a59e;
+  }
+}
+
+.fairy {
+  background-color: #fceaff;
+  &:hover{
+    background-color: #e4cbe9;
+  }
+}
+
+.poison {
+  background-color: #a335a3;
+  &:hover{
+    background-color: #691969;
+  }
+}
+
+.bug {
+  background-color: #f8d5a3;
+  &:hover{
+    background-color: #e6ab5a;
+  }
+}
+
+.dragon {
+  background-color: #97b3e6;
+  &:hover{
+    background-color: #49679e;
+  }
+}
+
+.psychic {
+  background-color: #eaeda1;
+  &:hover{
+    background-color: #b1b451;
+  }
+}
+
+.flying {
+  background-color: #F5F5F5;
+  &:hover{
+    background-color: #afa2a2;
+  }
+}
+
+.fighting {
+  background-color: #E6E0D4;
+  &:hover{
+    background-color: #E6E0D4;
+  }
+}
+
+.ghost {
+  background-color: #9c9b9b;
+  &:hover{
+    background-color: #747070;
+  }
+}
+
+.dark {
+  background-color: #b49393;
+  &:hover{
+    background-color: #9e7878;
+  }
+}
+
+.normal {
+  background-color: #F5F5F5;
+  &:hover{
+    background-color: #d8d3d3;
+  }
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
