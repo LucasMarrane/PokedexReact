@@ -18,13 +18,13 @@ export function App() {
   const { ObterPokemons, isLoadingPokemon } = usePokemonService();
 
   const [geracoes] = useState([
-    { limite: 151, pular: 0 },
-    { limite: 100, pular: 151 },
-    { limite: 135, pular: 251 },
-    { limite: 107, pular: 386 },
-    { limite: 156, pular: 493 },
-    { limite: 72, pular: 649 },
-    { limite: 86, pular: 721 },
+    { limite: 151, pular: 0, gen: 1 },
+    { limite: 100, pular: 151, gen: 2},
+    { limite: 135, pular: 251, gen: 3 },
+    { limite: 107, pular: 386, gen: 4 },
+    { limite: 156, pular: 493, gen:5 },
+    { limite: 72, pular: 649, gen: 6 },
+    { limite: 86, pular: 721, gen: 7 },
   ]);
   const [tipos] = useState([
     "Steel",
@@ -87,6 +87,7 @@ export function App() {
   };
 
   useEffect(() => {
+    document.title = `Pokemons da ${geracaoSelecionada.gen} Geração `;
     setPokemons(filtrados());
   }, [geracaoSelecionada, pokemon, tipoSelecionado, letraSelecionada]);
 
