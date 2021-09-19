@@ -91,7 +91,7 @@ export function App() {
 
   useEffect(() => {
     setPokemons(filtrados());
-  }, [geracaoSelecionada, pokemon, tipoSelecionado, letraSelecionada]);
+  }, [geracaoSelecionada, pokemon, tipoSelecionado, letraSelecionada, filtrados]);
 
   return (
     <div className="App">
