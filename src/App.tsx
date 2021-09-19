@@ -75,23 +75,20 @@ export function App() {
         ? pokemonFiltrado
         : pokemon;
 
-        console.log(poke)
-
     return poke.filter((item: any) => {
       if (
-        item.name.startsWith(
-          letraSelecionada.toLowerCase()) || letraSelecionada === "None"        
+        item.name.startsWith(letraSelecionada.toLowerCase()) ||
+        letraSelecionada === "None"
       ) {
-        
         return true;
       }
-      return false
+      return false;
     });
   };
 
   useEffect(() => {
     setPokemons(filtrados());
-  }, [geracaoSelecionada, pokemon, tipoSelecionado, letraSelecionada, filtrados]);
+  }, [geracaoSelecionada, pokemon, tipoSelecionado, letraSelecionada]);
 
   return (
     <div className="App">
