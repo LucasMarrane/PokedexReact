@@ -1,40 +1,20 @@
-*, body, html {
+*,
+body,
+html {
   box-sizing: border-box;
 }
 
-body{
+body {
   width: 100vw;
   min-height: 100vh;
   box-sizing: border-box;
-  &::before{
-    box-sizing: border-box;
-    width: 100vw;
-    height: 205px;
-    content: "";
-    background-color: red;
-    position: absolute; 
-    border-bottom: 10px solid #000;
-     
-    
-    z-index: 1;
-  }
-  &::after{
-    box-sizing: border-box;
-    width: 80px;
-    height: 80px;
-    content: "";
-    background-color: rgb(255, 255, 255);
-    position: absolute;
-    border: 10px solid black;
-    border-radius: 50%;
-    top: 160px;
-    left: calc(50vw - 40px);
-    z-index: 2;
-  }
+  overflow: hidden;
 }
 
 .App {
   text-align: center;
+  display: flex;
+  flex-direction: column;
 
 }
 
@@ -44,45 +24,95 @@ body{
   }
 }
 
-.App-header {  
-  min-height: 100vh;
+.App-header {
+  box-sizing: border-box;
+  height: 200px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
   color: #000;
   position: relative;
-
-  
-    z-index: 10;
-  
+  background: #ff0000;
+  border-bottom: 10px solid #000000;
 
   &::after {
+    box-sizing: border-box;
+    width: 80px;
+    height: 80px;
     content: "";
-    background-color: #000;
-    height: 50vh;
+    background-color: rgb(255, 255, 255);
     position: absolute;
+    border: 10px solid black;
+    border-radius: 50%;
+    bottom: -40px;
+    left: calc(50vw - 40px);
+    z-index: 2;
   }
+
+  .configuracao {
+    height: 80%;
+    width: 100%;
+    display: flex;  
+    justify-content: center;  
+
+    .item {
+      display: flex;
+      flex-direction: column;
+      padding: 20px;
+
+      select {        
+        appearance: menulist-button; 
+        background-color: transparent;
+        border: none;
+        padding: 0 1em 0 0;
+        margin: 0;
+        width: 100%;
+        font-family: inherit;
+        font-size: inherit;
+        cursor: inherit;
+        line-height: inherit;
+        outline: none;
+
+      
+
+        &::before,
+        &::after {
+          background: #691969;
+          box-sizing: border-box;
+         
+        }
+      }
+    }
+  }
+
+}
+
+.loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: calc(100vh - 200px);
 }
 
 ul {
+  box-sizing: border-box;
   flex-direction: row;
   flex-wrap: wrap;
   display: flex;
   padding: 0;
-  margin: 0;
-  width: 98vw;
+  width: 100%;
+  padding-top: 40px;
   padding: 10px;
-  margin-top: 10%;  
+  height: calc(100vh - 235px);
 
   li {
     list-style: none;
     display: flex;
-    flex-direction: column-reverse;
-    flex-wrap: wrap;    
-    padding: 10px;   
-    width: 16.66%; 
+    flex-direction: column;
+    flex-wrap: wrap;
+    padding: 10px;
+    width: 16.66%;
 
     @media screen and(max-width: 1024px) {
       width: 33.33%;
@@ -92,143 +122,162 @@ ul {
       width: 100%;
     }
 
-    div {      
+    div {
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
       padding: 10px;
       border-radius: 10px;
-      
+
 
       img {
         max-width: 400px;
         max-height: 400px;
       }
     }
-
-
+    
   }
 }
 
 .steel {
-  background-color: #f4f4f4;
+  background-color: #f4f4f4 !important;
 
-  &:hover{
-    background-color: #d6d6d6;
+  &:hover {
+    background-color: #d6d6d6 !important;
   }
 }
 
 .fire {
-  background-color: #FDDFDF;
-  &:hover{
-    background-color: #fdb6b6;
+  background-color: #FDDFDF !important;
+
+  &:hover {
+    background-color: #fdb6b6 !important;
   }
 }
 
 .grass {
-  background-color: #DEFDE0;
-  &:hover{
-    background-color: #aaf7af;
+  background-color: #DEFDE0 !important;
+
+  &:hover {
+    background-color: #aaf7af !important;
   }
 }
 
 .electric {
-  background-color: #FCF7DE;
-  &:hover{
-    background-color: #fce98a;
+  background-color: #FCF7DE !important;
+
+  &:hover {
+    background-color: #fce98a !important;
   }
 }
 
 .water,
 .ice {
-  background-color: #DEF3FD;
-  &:hover{
-    background-color: #b6e3f8;
+  background-color: #DEF3FD !important;
+
+  &:hover {
+    background-color: #b6e3f8 !important;
   }
 }
 
 .ground {
-  background-color: #f4e7da;
-  &:hover{
-    background-color: #f0bf8e;
+  background-color: #f4e7da !important;
+
+  &:hover {
+    background-color: #f0bf8e !important;
   }
 }
 
 .rock {
-  background-color: #d5d5d4;
-  &:hover{
-    background-color: #a5a59e;
+  background-color: #d5d5d4 !important;
+
+  &:hover {
+    background-color: #a5a59e !important;
   }
 }
 
 .fairy {
-  background-color: #fceaff;
-  &:hover{
-    background-color: #e4cbe9;
+  background-color: #fceaff !important;
+
+  &:hover {
+    background-color: #e4cbe9 !important;
   }
 }
 
 .poison {
-  background-color: #a335a3;
-  &:hover{
-    background-color: #691969;
+  background-color: #a335a3 !important;
+
+  &:hover {
+    background-color: #691969 !important;
   }
 }
 
 .bug {
-  background-color: #f8d5a3;
-  &:hover{
-    background-color: #e6ab5a;
+  background-color: #f8d5a3 !important;
+
+  &:hover {
+    background-color: #e6ab5a !important;
   }
 }
 
 .dragon {
-  background-color: #97b3e6;
-  &:hover{
-    background-color: #49679e;
+  background-color: #97b3e6 !important;
+
+  &:hover {
+    background-color: #49679e !important;
   }
 }
 
 .psychic {
-  background-color: #eaeda1;
-  &:hover{
-    background-color: #b1b451;
+  background-color: #eaeda1 !important;
+
+  &:hover {
+    background-color: #b1b451 !important;
   }
 }
 
 .flying {
-  background-color: #F5F5F5;
-  &:hover{
-    background-color: #afa2a2;
+  background-color: #F5F5F5 !important;
+
+  &:hover {
+    background-color: #afa2a2 !important;
   }
 }
 
 .fighting {
-  background-color: #E6E0D4;
-  &:hover{
-    background-color: #E6E0D4;
+  background-color: #E6E0D4 !important;
+
+  &:hover {
+    background-color: #E6E0D4 !important;
   }
 }
 
 .ghost {
-  background-color: #9c9b9b;
-  &:hover{
-    background-color: #747070;
+  background-color: #9c9b9b !important;
+
+  &:hover {
+    background-color: #747070 !important;
   }
 }
 
+.none{
+  background-color: transparent !important;
+}
+
 .dark {
-  background-color: #b49393;
-  &:hover{
-    background-color: #9e7878;
+  background-color: #b49393 !important;
+
+  &:hover {
+    background-color: #9e7878 !important;
   }
 }
 
 .normal {
-  background-color: #F5F5F5;
-  &:hover{
-    background-color: #d8d3d3;
+  background-color: #F5F5F5 !important;
+
+  &:hover {
+    background-color: #d8d3d3 !important;
   }
 }
 

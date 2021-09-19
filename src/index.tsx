@@ -4,6 +4,7 @@ import "./index.css";
 import {App} from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { AuthContextProvider } from "./context/authContext";
+import 'react-perfect-scrollbar/dist/css/styles.css';
 
 ReactDOM.render(
   <React.StrictMode>

@@ -4,7 +4,7 @@ import { Api } from "../api";
 export function usePokemonService() {
   const [isLoadingPokemon, setIsLoadingPokemon] = useState(false);
 
-  function ObterPokemons(limite: number, pular: number) {
+  function ObterPokemons(limite: number, pular: number){
     const [pokemon, setPokemon] = useState<any>([]);
     const loadPokemonFromServer = useCallback(async () => {
       setIsLoadingPokemon(prev => true);
@@ -16,22 +16,23 @@ export function usePokemonService() {
         },
       });
       response = await response.data;
-
+      
       let pokemons = response.results.map(async (item: any) => {
         const poke = await api.get(item.url);
         return await poke.data;
       });
       let promises = await Promise.all(pokemons);
       setIsLoadingPokemon(prev => false);
-
+      
       setPokemon(promises);
+     
     }, [limite, pular]);
-
+    
     useEffect(() => {
       loadPokemonFromServer();
-    }, [loadPokemonFromServer]);
-
-    return pokemon;
+    }, [loadPokemonFromServer, limite, pular]);
+    
+    return {pokemon};
   }
 
   return { ObterPokemons, isLoadingPokemon };
